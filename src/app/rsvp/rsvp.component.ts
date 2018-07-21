@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RsvpModel } from '../rsvp/rsvp.model';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
 
 import { RsvpService } from '../rsvp/rsvp.service';
+
+import { RsvpModel } from '../rsvp/rsvp.model';
 
 @Component({
     selector: 'app-rsvp',
@@ -10,7 +13,10 @@ import { RsvpService } from '../rsvp/rsvp.service';
 })
 export class RsvpComponent implements OnInit {
 
-    constructor(private rsvpService: RsvpService) {
+    rsvps: Observable<any[]>;
+
+    constructor(private rsvpService: RsvpService, db: AngularFirestore) {
+        this.rsvps = db.collection('items').valueChanges();
     }
     ngOnInit() {
 
