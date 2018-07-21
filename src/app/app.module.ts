@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Components
 import { AppComponent } from './app.component';
@@ -40,7 +42,9 @@ import { environment } from '../environments/environment';
       MatFormFieldModule,
       MatRadioModule,
       MatInputModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      MatTabsModule,
+      MatToolbarModule
   ],
     providers: [
         RsvpService

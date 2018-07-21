@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 
 body { 
     font-family: Roboto, Arial, sans-serif;
     margin: 0;
+}
+mat-toolbar-row {
+    justify-content: center;
+}
+nav {
+    justify-content: center;
 }
 table {
     width: 100%;

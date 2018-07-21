@@ -6,6 +6,6 @@ export class RsvpService {
   constructor() { }
 
     getDinnerOptions(): string[] {
-        return ["Chicken", "Beef"];
+        return ["Chicken", "Beef", "Veggie"];
     }
 }

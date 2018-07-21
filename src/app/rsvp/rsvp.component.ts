@@ -17,11 +17,13 @@ export class RsvpComponent implements OnInit {
     rsvp: AngularFirestoreDocument<any>;
     db: AngularFirestore;
     displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner'];
+    model: RsvpModel;
 
     constructor(private rsvpService: RsvpService, db: AngularFirestore) {
         this.db = db;
         this.rsvps = db.collection('rsvps').valueChanges();
     }
+
     ngOnInit() {
 
         this.model = new RsvpModel(
@@ -30,16 +32,11 @@ export class RsvpComponent implements OnInit {
             false,
             'Chicken',
             this.rsvpService.getDinnerOptions()
-        )
+        );
     }
 
-    model: RsvpModel
-    submitted = false
 
     onSubmit() {
-        this.submitted = true
-        console.log(this.model.FirstName + ' ' + this.model.LastName + ' ' + this.model.Rsvp);
-
         this.rsvp = this.db.doc<any>('rsvps/' + this.model.FirstName + this.model.LastName);
         this.rsvp.set({
             FirstName: this.model.FirstName,
@@ -48,11 +45,4 @@ export class RsvpComponent implements OnInit {
             Dinner: this.model.Dinner
         });
     }
-}
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
 }
