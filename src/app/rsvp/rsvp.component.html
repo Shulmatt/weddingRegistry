@@ -1,3 +1,34 @@
 <p>
-  rsvp works!
+    rsvp works!
 </p>
+<div class="container">
+    <h1>RSVP</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="FirstName">First Name</label>
+            <input [(ngModel)]="model.FirstName" name="FirstName" type="text" class="form-control" id="FirstName" placeholder="First" required>
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">Last Name</label>
+            <input [(ngModel)]="model.LastName" type="text" name="LastName" class="form-control" id="LastName" placeholder="Last">
+        </div>
+
+        <div class="form-group">
+            <label for="Rsvp">Rsvp</label>
+            <select [(ngModel)]="model.Rsvp" class="form-control" name="Rsvp" type="text" required>
+                <option *ngFor="let option of model.Options" [value]="option" > {{option}} </option>
+            </select>
+        </div>
+        <div class="form-group" *ngIf="model.Rsvp == 'Yes'">
+            <label for="Dinner">Dinner</label>
+            <select [(ngModel)]="model.Dinner" class="form-control" name="Dinner" type="text" required>
+                <option *ngFor="let dinner of model.DinnerOptions" [value]="dinner" > {{dinner}} </option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+        <ul>
+        </ul>
+    </form>
+</div>
