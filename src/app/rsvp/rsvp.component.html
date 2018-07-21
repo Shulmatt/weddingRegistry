@@ -31,26 +31,37 @@
         <ul>
         </ul>
     </form>
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table" >
-                <thead>
-                    <tr>
-                        <th scope="col" >First Name</th>
-                        <th scope="col" >Last Name</th>
-                        <th scope="col" >Rsvp</th>
-                        <th scope="col" >Dinner</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let rsvp of rsvps | async" >
-                        <td> {{ rsvp.FirstName }} </td>
-                        <td> {{ rsvp.LastName }} </td>
-                        <td> {{ rsvp.Rsvp }} </td>
-                        <td> {{ rsvp.Dinner }} </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+
+<table mat-table [dataSource]="rsvps | async" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="FirstName">
+    <th mat-header-cell *matHeaderCellDef> First Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.FirstName}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="LastName">
+    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.LastName}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Rsvp">
+    <th mat-header-cell *matHeaderCellDef> Rsvp </th>
+    <td mat-cell *matCellDef="let element"> {{element.Rsvp}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Dinner">
+    <th mat-header-cell *matHeaderCellDef> Dinner </th>
+    <td mat-cell *matCellDef="let element"> {{element.Dinner }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
 </div>
