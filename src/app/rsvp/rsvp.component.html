@@ -31,9 +31,26 @@
         <ul>
         </ul>
     </form>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table" >
+                <thead>
+                    <tr>
+                        <th scope="col" >First Name</th>
+                        <th scope="col" >Last Name</th>
+                        <th scope="col" >Rsvp</th>
+                        <th scope="col" >Dinner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rsvp of rsvps | async" >
+                        <td> {{ rsvp.FirstName }} </td>
+                        <td> {{ rsvp.LastName }} </td>
+                        <td> {{ rsvp.Rsvp }} </td>
+                        <td> {{ rsvp.Dinner }} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-<ul>
-    <li class="text" *ngFor="let rsvp of rsvps | async">
-        {{rsvp.name}}
-    </li>
-</ul>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 
 import { RsvpService } from '../rsvp/rsvp.service';
@@ -14,9 +14,12 @@ import { RsvpModel } from '../rsvp/rsvp.model';
 export class RsvpComponent implements OnInit {
 
     rsvps: Observable<any[]>;
+    rsvp: AngularFirestoreDocument<RsvpModel>;
+    db: AngularFirestore;
 
     constructor(private rsvpService: RsvpService, db: AngularFirestore) {
-        this.rsvps = db.collection('items').valueChanges();
+        this.db = db;
+        this.rsvps = db.collection('rsvps').valueChanges();
     }
     ngOnInit() {
 
@@ -35,6 +38,13 @@ export class RsvpComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true
-        console.log(this.model.FirstName + ' ' + this.model.LastName + ' ' + this.model.Rsvp)
+        console.log(this.model.FirstName + ' ' + this.model.LastName + ' ' + this.model.Rsvp);
+        this.rsvp = this.db.doc<any>('rsvps/' + this.model.FirstName + this.model.LastName);
+        this.rsvp.set({
+            FirstName: this.model.FirstName,
+            LastName: this.model.LastName,
+            Rsvp: this.model.Rsvp,
+            Dinner: this.model.Dinner
+        });
     }
 }
