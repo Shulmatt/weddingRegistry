@@ -38,10 +38,19 @@ export class RsvpComponent implements OnInit {
 
     onSubmit() {
         this.rsvp = this.db.doc<any>('rsvps/' + this.model.FirstName + this.model.LastName);
+
+        var rsvpChoice: string;
+        if (this.model.Rsvp) {
+            rsvpChoice = 'Yes';
+        } else {
+            rsvpChoice = 'No';
+            this.model.Dinner = '';
+        }
+
         this.rsvp.set({
             FirstName: this.model.FirstName,
             LastName: this.model.LastName,
-            Rsvp: this.model.Rsvp,
+            Rsvp: rsvpChoice,
             Dinner: this.model.Dinner
         });
     }

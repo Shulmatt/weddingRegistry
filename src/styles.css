@@ -3,10 +3,16 @@
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 
 @media (max-width: 600px) {
-    
     body {
         font-family: Roboto, Arial, sans-serif;
-        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .theme {
+        height: 100%;
+    }
+    .mat-app-background {
+        height: 100%;
     }
     mat-toolbar-row {
         justify-content: center;
@@ -94,9 +100,16 @@
 }
 
 @media (min-width: 601px) {
-    body {
+    html, body {
         font-family: Roboto, Arial, sans-serif;
-        margin: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .theme {
+        height: 100%;
+    }
+    .mat-app-background {
+        height: 100%;
     }
     mat-toolbar-row {
         justify-content: center;
