@@ -14,31 +14,29 @@ import { RsvpModel } from '../rsvp/rsvp.model';
 export class RsvpComponent implements OnInit {
 
     rsvps: Observable<any[]>;
-    rsvp: AngularFirestoreDocument<RsvpModel>;
+    rsvp: AngularFirestoreDocument<any>;
     db: AngularFirestore;
+    displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner'];
+    model: RsvpModel;
 
     constructor(private rsvpService: RsvpService, db: AngularFirestore) {
         this.db = db;
         this.rsvps = db.collection('rsvps').valueChanges();
     }
+
     ngOnInit() {
 
         this.model = new RsvpModel(
             '',
             '',
-            this.rsvpService.getOptions(),
-            'Nothing Selected',
+            false,
             'Chicken',
             this.rsvpService.getDinnerOptions()
-        )
+        );
     }
 
-    model: RsvpModel
-    submitted = false
 
     onSubmit() {
-        this.submitted = true
-        console.log(this.model.FirstName + ' ' + this.model.LastName + ' ' + this.model.Rsvp);
         this.rsvp = this.db.doc<any>('rsvps/' + this.model.FirstName + this.model.LastName);
         this.rsvp.set({
             FirstName: this.model.FirstName,

@@ -5,11 +5,7 @@ export class RsvpService {
 
   constructor() { }
 
-    getOptions(): string[] {
-        return ['Nothing Selected', 'Yes', 'No'];
-    }
-
     getDinnerOptions(): string[] {
-        return ["Chicken", "Beef"];
+        return ["Chicken", "Beef", "Veggie"];
     }
 }

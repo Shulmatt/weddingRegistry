@@ -1,6 +1,15 @@
-<h1>Matthew and Rachel</h1>
-<nav>
-    <a routerLink="/home">Home</a>
-    <a routerLink="/rsvp">&nbsp;RSVP</a>
+<mat-toolbar color="primary" class="mat-elevation-z10">
+    <mat-toolbar-row style="align-content: center;">
+        <span> Wedding Registry </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<nav mat-tab-nav-bar class="mat-elevation-z6">
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive"
+    >{{link.label}}
+    </a>
 </nav>
 <router-outlet></router-outlet>

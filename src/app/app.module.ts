@@ -5,6 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 // Components
 import { AppComponent } from './app.component';
@@ -28,7 +37,16 @@ import { environment } from '../environments/environment';
       AppRoutingModule,
       FormsModule,
       AngularFireModule.initializeApp(environment.firebase),
-      AngularFirestoreModule
+      AngularFirestoreModule,
+      MatTableModule,
+      MatCheckboxModule,
+      MatFormFieldModule,
+      MatRadioModule,
+      MatInputModule,
+      BrowserAnimationsModule,
+      MatTabsModule,
+      MatToolbarModule,
+      MatCardModule
   ],
     providers: [
         RsvpService

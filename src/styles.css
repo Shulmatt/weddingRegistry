@@ -1,2 +1,163 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+@media (max-width: 600px) {
+    
+    body {
+        font-family: Roboto, Arial, sans-serif;
+        margin: 0;
+    }
+    mat-toolbar-row {
+        justify-content: center;
+    }
+    nav {
+        justify-content: center;
+    }
+    table {
+        width: 100%;
+    }
+    .example-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .example-container > * {
+        width: 100%;
+    }
+    .example-radio-group {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    .example-radio-button {
+        margin: 5px;
+    }
+
+    .example-selected-value {
+        margin: 15px 0;
+    }
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+    .example-card {
+        max-width: 400px;
+    }
+
+    .example-header-image {
+        background-size: cover;
+    }
+    img {
+        width: 250px;
+        height: 250px;
+    }
+    .home-container {
+        margin: 0px 20px 20px 20px;
+    }
+    .mat-card-title {
+        font-size: 16px;
+        font-weight: 6;
+        margin: 0px 5px 0px 5px;
+    }
+    .mat-card {
+        padding: 10px 16px 5px 16px !important;
+    }
+    .rsvp-container {
+        margin: 20px;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+    .cdk-column-FirstName {
+        width: 90px;
+    }
+    .cdk-column-LastName {
+        width: 80px;
+    }
+    .cdk-column-Rsvp {
+        width: 60px;
+    }
+    .cdk-column-Dinner {
+        width: 60px;
+    }
+}
+
+@media (min-width: 601px) {
+    body {
+        font-family: Roboto, Arial, sans-serif;
+        margin: 0;
+    }
+    mat-toolbar-row {
+        justify-content: center;
+    }
+    nav {
+        justify-content: center;
+    }
+    table {
+        width: 100%;
+    }
+    .example-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .example-container > * {
+        width: 100%;
+    }
+    .example-radio-group {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    .example-radio-button {
+        margin: 5px;
+    }
+
+    .example-selected-value {
+        margin: 15px 0;
+    }
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+    .example-card {
+        max-width: 400px;
+    }
+
+    .example-header-image {
+        background-size: cover;
+    }
+    img {
+        width: 400px;
+        height: 350px;
+    }
+    .home-container {
+        margin: 50px 50px 50px 125px;
+    }
+    .mat-card-title {
+        font-size: 16px;
+        font-weight: 4;
+        align-content: center;
+    }
+    .cdk-column-FirstName {
+        width: 300px;
+    }
+    .cdk-column-LastName {
+        width: 300px;
+    }
+    .cdk-column-Rsvp {
+        width: 300px;
+    }
+    .cdk-column-Dinner {
+        width: 300px;
+    }
+}
