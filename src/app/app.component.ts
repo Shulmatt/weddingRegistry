@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ThemeService } from './theme.service';
 
 @Component({
     selector: 'app-root',
@@ -8,11 +10,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
     title = 'app';
     navLinks: any[];
+    isDarkTheme: Observable<boolean>;
+
+    constructor(private themeService: ThemeService) {}
 
     ngOnInit() {
         this.navLinks = [
             { path: 'home', label: 'Home' },
             { path: 'rsvp', label: 'RSVP' }
         ];
+
+        this.isDarkTheme = this.themeService.isDarkTheme;
+    }
+
+    toggleTheme(checked: boolean) {
+        this.themeService.setDarkTheme(checked);
     }
 }
