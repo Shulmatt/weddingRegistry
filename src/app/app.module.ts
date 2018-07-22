@@ -15,6 +15,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
 
 // Components
 import { AppComponent } from './app.component';
@@ -48,7 +49,8 @@ import { environment } from '../environments/environment';
       MatTabsModule,
       MatToolbarModule,
       MatCardModule,
-      MatSlideToggleModule
+      MatSlideToggleModule,
+      MatButtonModule
   ],
     providers: [
         RsvpService
