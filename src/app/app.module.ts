@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 // Components
 import { AppComponent } from './app.component';
@@ -44,7 +45,8 @@ import { environment } from '../environments/environment';
       MatInputModule,
       BrowserAnimationsModule,
       MatTabsModule,
-      MatToolbarModule
+      MatToolbarModule,
+      MatCardModule
   ],
     providers: [
         RsvpService
