@@ -85,6 +85,12 @@
     .cdk-column-Dinner {
         width: 60px;
     }
+    .example-icon {
+        padding: 0 14px;
+    }
+    .example-spacer {
+        flex: 1 1 auto;
+    }
 }
 
 @media (min-width: 601px) {
@@ -159,5 +165,11 @@
     }
     .cdk-column-Dinner {
         width: 300px;
+    }
+    .example-icon {
+        padding: 0 14px;
+    }
+    .example-spacer {
+        flex: 1 1 auto;
     }
 }

@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 // Components
 import { AppComponent } from './app.component';
@@ -46,7 +47,8 @@ import { environment } from '../environments/environment';
       BrowserAnimationsModule,
       MatTabsModule,
       MatToolbarModule,
-      MatCardModule
+      MatCardModule,
+      MatSlideToggleModule
   ],
     providers: [
         RsvpService
