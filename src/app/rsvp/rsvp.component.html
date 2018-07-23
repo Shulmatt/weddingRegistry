@@ -24,32 +24,5 @@
             <button mat-raised-button type="submit" style="width: 100px;" color="primary">Submit</button>
         </form>
     </div>
-    <div class="row" >
-        <h1>Guest List</h1>
-        <mat-table mat-table [dataSource]="rsvps | async" class="mat-elevation-z8">
-
-            <ng-container matColumnDef="FirstName">
-                <mat-header-cell mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
-                <mat-cell mat-cell *matCellDef="let element"> {{element.FirstName}} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="LastName">
-                <mat-header-cell mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
-                <mat-cell mat-cell *matCellDef="let element"> {{element.LastName}} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="Rsvp">
-                <mat-header-cell mat-header-cell *matHeaderCellDef> Rsvp </mat-header-cell>
-                <mat-cell mat-cell *matCellDef="let element"> {{element.Rsvp}} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="Dinner">
-                <mat-header-cell mat-header-cell *matHeaderCellDef> Dinner </mat-header-cell>
-                <mat-cell mat-cell *matCellDef="let element"> {{element.Dinner}} </mat-cell>
-            </ng-container>
-
-            <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
-    </div>
+    <div style="height: 300px;"></div>
 </div>

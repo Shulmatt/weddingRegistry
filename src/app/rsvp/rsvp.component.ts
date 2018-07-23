@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { RsvpService } from '../rsvp/rsvp.service';
 
@@ -19,7 +20,7 @@ export class RsvpComponent implements OnInit {
     displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner'];
     model: RsvpModel;
 
-    constructor(private rsvpService: RsvpService, db: AngularFirestore) {
+    constructor(private rsvpService: RsvpService, db: AngularFirestore, public snackBar: MatSnackBar) {
         this.db = db;
         this.rsvps = db.collection('rsvps').valueChanges();
     }
@@ -53,5 +54,7 @@ export class RsvpComponent implements OnInit {
             Rsvp: rsvpChoice,
             Dinner: this.model.Dinner
         });
+
+        this.snackBar.open("Submitted! You're good to go.", '', { duration: 1000 });
     }
 }
