@@ -17,7 +17,8 @@ export class AppComponent {
     ngOnInit() {
         this.navLinks = [
             { path: 'home', label: 'Home' },
-            { path: 'rsvp', label: 'RSVP' }
+            { path: 'rsvp', label: 'RSVP' },
+            { path: 'grid', label: 'Guest List' }
         ];
 
         this.isDarkTheme = this.themeService.isDarkTheme;

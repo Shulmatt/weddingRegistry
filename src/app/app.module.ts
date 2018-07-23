@@ -16,6 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // Components
 import { AppComponent } from './app.component';
@@ -27,12 +28,14 @@ import { RsvpService } from './rsvp/rsvp.service';
 
 // Other
 import { environment } from '../environments/environment';
+import { GridComponent } from './grid/grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RsvpComponent
+    RsvpComponent,
+    GridComponent
   ],
   imports: [
       BrowserModule,
@@ -50,7 +53,8 @@ import { environment } from '../environments/environment';
       MatToolbarModule,
       MatCardModule,
       MatSlideToggleModule,
-      MatButtonModule
+      MatButtonModule,
+      MatSnackBarModule
   ],
     providers: [
         RsvpService
