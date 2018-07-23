@@ -1,21 +1,29 @@
-<div [ngClass]="{'theme': isDarkTheme | async}">
+<div class="header-container" [ngClass]="{'theme': isDarkTheme | async}">
     <div class="mat-app-background" >
-        <mat-toolbar color="primary" class="mat-elevation-z10">
-            <mat-toolbar-row style="align-content: center;">
-                <span> Wedding Registry </span>
-                <span class="example-spacer" ></span>
-                <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleTheme($event.checked)">Theme</mat-slide-toggle>
-            </mat-toolbar-row>
-        </mat-toolbar>
-        <nav mat-tab-nav-bar class="mat-elevation-z6">
-            <a mat-tab-link
-               *ngFor="let link of navLinks"
-               [routerLink]="link.path"
-               routerLinkActive #rla="routerLinkActive"
-               [active]="rla.isActive"
-            >{{link.label}}
-            </a>
-        </nav>
-        <router-outlet></router-outlet>
+        <div class="body" >
+            <mat-toolbar color="primary" class="mat-elevation-z10">
+                <mat-toolbar-row style="align-content: center;">
+                    <span> Wedding Registry </span>
+                    <span class="toolbar-spacer" ></span>
+                    <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleTheme($event.checked)">Theme</mat-slide-toggle>
+                </mat-toolbar-row>
+            </mat-toolbar>
+            <nav mat-tab-nav-bar class="mat-elevation-z6">
+                <a mat-tab-link
+                   *ngFor="let link of navLinks"
+                   [routerLink]="link.path"
+                   routerLinkActive #rla="routerLinkActive"
+                   [active]="rla.isActive"
+                >{{link.label}}
+                </a>
+            </nav>
+            <router-outlet></router-outlet>
+        </div>
+        <div style="height: 40px;"></div>
+        <footer>
+            <mat-toolbar color="primary" >
+                <p style="font-size: 16px;">Created by Matthew Shuler.</p>
+            </mat-toolbar>
+        </footer>
     </div>
 </div>
