@@ -29,13 +29,15 @@ import { RsvpService } from './rsvp/rsvp.service';
 // Other
 import { environment } from '../environments/environment';
 import { GridComponent } from './grid/grid.component';
+import { RegistryComponent } from './registry/registry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RsvpComponent,
-    GridComponent
+    GridComponent,
+    RegistryComponent
   ],
   imports: [
       BrowserModule,

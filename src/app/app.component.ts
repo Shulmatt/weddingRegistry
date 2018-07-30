@@ -18,7 +18,8 @@ export class AppComponent {
         this.navLinks = [
             { path: 'home', label: 'Home' },
             { path: 'rsvp', label: 'RSVP' },
-            { path: 'grid', label: 'Guest List' }
+            { path: 'grid', label: 'Guest List' },
+            { path: 'registry', label: 'Registry' }
         ];
 
         this.isDarkTheme = this.themeService.isDarkTheme;
