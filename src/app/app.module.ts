@@ -30,6 +30,7 @@ import { RsvpService } from './rsvp/rsvp.service';
 import { environment } from '../environments/environment';
 import { GridComponent } from './grid/grid.component';
 import { RegistryComponent } from './registry/registry.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { RegistryComponent } from './registry/registry.component';
       MatCardModule,
       MatSlideToggleModule,
       MatButtonModule,
-      MatSnackBarModule
+      MatSnackBarModule,
+      ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
     providers: [
         RsvpService

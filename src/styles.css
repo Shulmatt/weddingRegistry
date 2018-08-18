@@ -15,6 +15,9 @@ footer {
     display: flex;
     flex-direction: column;
 }
+.body {
+    margin-bottom: 60px;
+}
 .mat-form-field {
     max-width: 1000px;
 }
@@ -40,7 +43,6 @@ footer {
     html, body {
         font-family: Roboto, Arial, sans-serif;
         width: 100%;
-        height: 100%;
     }
 }
 
@@ -49,7 +51,6 @@ footer {
     html, body {
         font-family: Roboto, Arial, sans-serif;
         width: 100%;
-        height: 100%;
     }
     .body, .mat-app-background, .header-container {
         height: 100%;

@@ -8,7 +8,7 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-        "schematics": {},
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -20,11 +20,12 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
-                "src/styles.css",
-                "src/themes.scss"
+              "src/styles.css",
+              "src/themes.scss"
             ],
             "scripts": []
           },
@@ -44,7 +45,8 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "serviceWorker": true
             }
           }
         },
@@ -78,7 +80,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ]
           }
         },
