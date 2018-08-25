@@ -26,14 +26,7 @@ export class RsvpComponent implements OnInit {
     }
 
     ngOnInit() {
-
-        this.model = new RsvpModel(
-            '',
-            '',
-            false,
-            'Chicken',
-            this.rsvpService.getDinnerOptions()
-        );
+        this.model = this.rsvpService.getNewRsvpModel();
     }
 
 
@@ -55,6 +48,14 @@ export class RsvpComponent implements OnInit {
             Dinner: this.model.Dinner
         });
 
-        this.snackBar.open("Submitted! You're good to go.", '', { duration: 1000 });
+        if (this.model.Rsvp) {
+            this.snackBar.open("Submitted! You're good to go.", '', { duration: 5000 });
+        } else {
+            this.snackBar.open("Submitted, sorry that you cannot make it.", '', { duration: 5000 });
+        }
+
+        // Clear form
+        this.model = this.rsvpService.getNewRsvpModel();
+        
     }
 }
