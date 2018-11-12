@@ -1,5 +1,12 @@
-<div class="row" >
-    <h1>Guest List</h1>
+<div class="row">
+        <h1>Guest List</h1>
+    <mat-form-field >
+        <mat-label >RSVP List Password</mat-label>
+        <input [(ngModel)]="entered" name="entered" matInput placeholder="Please enter the password.">
+    </mat-form-field>
+</div>
+
+<div class="row" *ngIf="(entered | lowercase) === 'oscarthepug'">
     <mat-table mat-table [dataSource]="rsvps | async" class="mat-elevation-z8">
 
         <ng-container matColumnDef="FirstName">

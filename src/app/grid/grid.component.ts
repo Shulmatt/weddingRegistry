@@ -13,6 +13,7 @@ export class GridComponent implements OnInit {
     rsvp: AngularFirestoreDocument<any>;
     db: AngularFirestore;
     displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner'];
+    entered: string;
 
     constructor(db: AngularFirestore) {
         this.db = db;
