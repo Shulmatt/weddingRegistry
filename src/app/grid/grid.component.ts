@@ -11,8 +11,9 @@ export class GridComponent implements OnInit {
 
     rsvps: Observable<any[]>;
     rsvp: AngularFirestoreDocument<any>;
+    allergies: Observable<any[]>;
     db: AngularFirestore;
-    displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner'];
+    displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner', 'Allergies'];
     entered: string;
 
     constructor(db: AngularFirestore) {

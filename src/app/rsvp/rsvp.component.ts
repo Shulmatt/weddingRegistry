@@ -45,7 +45,8 @@ export class RsvpComponent implements OnInit {
             FirstName: this.model.FirstName,
             LastName: this.model.LastName,
             Rsvp: rsvpChoice,
-            Dinner: this.model.Dinner
+            Dinner: this.model.Dinner,
+            Allergies: this.model.Allergies
         });
 
         if (this.model.Rsvp) {
