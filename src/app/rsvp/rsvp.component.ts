@@ -19,6 +19,7 @@ export class RsvpComponent implements OnInit {
     db: AngularFirestore;
     displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner'];
     model: RsvpModel;
+    hasGuest: boolean;
 
     constructor(private rsvpService: RsvpService, db: AngularFirestore, public snackBar: MatSnackBar) {
         this.db = db;
@@ -46,7 +47,8 @@ export class RsvpComponent implements OnInit {
             LastName: this.model.LastName,
             Rsvp: rsvpChoice,
             Dinner: this.model.Dinner,
-            Allergies: this.model.Allergies
+            Allergies: this.model.Allergies,
+            GuestOf: this.model.GuestOf
         });
 
         if (this.model.Rsvp) {
@@ -57,6 +59,5 @@ export class RsvpComponent implements OnInit {
 
         // Clear form
         this.model = this.rsvpService.getNewRsvpModel();
-        
     }
 }

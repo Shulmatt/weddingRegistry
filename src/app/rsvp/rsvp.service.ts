@@ -18,6 +18,7 @@ export class RsvpService {
             false,
             'Chicken',
             this.getDinnerOptions(),
+            '',
             ''
         );
     }

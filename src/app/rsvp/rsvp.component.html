@@ -12,8 +12,17 @@
                 <input [(ngModel)]="model.LastName" name="LastName" matInput placeholder="Last">
             </mat-form-field>
 
-            <mat-checkbox class="example-margin" [(ngModel)]="model.Rsvp" name="Rsvp" >RSVP</mat-checkbox>
+            <mat-checkbox class="example-margin" [(ngModel)]="this.hasGuest" name="HasGuest" >RSVP For Guest</mat-checkbox>
+            <div *ngIf="this.hasGuest == true" >
+                <div class="container">
+                    <mat-form-field>
+                        <mat-label>Who is this the guest of?</mat-label>
+                        <input [(ngModel)]="model.GuestOf" name="GuestOf" matInput placeholder="First/Last Name" >
+                    </mat-form-field>
+                </div>
+            </div>
 
+            <mat-checkbox class="example-margin" [(ngModel)]="model.Rsvp" name="Rsvp" >RSVP</mat-checkbox>
             <div *ngIf="model.Rsvp == true">
                 <div >
                     <div class="radio-selected-value" >Dinner Option: {{ model.Dinner }}</div>

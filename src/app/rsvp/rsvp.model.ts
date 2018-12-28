@@ -6,6 +6,7 @@ export class RsvpModel {
         public Rsvp: boolean,
         public Dinner: string,
         public DinnerOptions: string[],
-        public Allergies: string
+        public Allergies: string,
+        public GuestOf: string
     ) {}
 }
