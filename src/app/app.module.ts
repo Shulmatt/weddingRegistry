@@ -31,6 +31,7 @@ import { environment } from '../environments/environment';
 import { GridComponent } from './grid/grid.component';
 import { RegistryComponent } from './registry/registry.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HotelComponent } from './hotel/hotel.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HomeComponent,
     RsvpComponent,
     GridComponent,
-    RegistryComponent
+    RegistryComponent,
+    HotelComponent
   ],
   imports: [
       BrowserModule,
