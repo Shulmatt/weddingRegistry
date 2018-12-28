@@ -14,7 +14,7 @@ export class GridComponent implements OnInit {
     allergies: Observable<any[]>;
     db: AngularFirestore;
     displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner', 'Allergies', 'GuestOf'];
-    entered: string;
+    entered: string = '';
 
     constructor(db: AngularFirestore) {
         this.db = db;
@@ -24,4 +24,23 @@ export class GridComponent implements OnInit {
     ngOnInit() {
     }
 
+    button1() {
+        this.entered = this.entered + '1';
+    }
+
+    button2() {
+        this.entered = this.entered + '2';
+    }
+
+    button3() {
+        this.entered = this.entered + '3';
+    }
+
+    button4() {
+        this.entered = this.entered + '4';
+    }
+
+    buttonReset() {
+        this.entered = '';
+    }
 }

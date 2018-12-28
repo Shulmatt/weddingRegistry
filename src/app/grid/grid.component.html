@@ -1,11 +1,15 @@
 <div class="row">
-    <h1>Guest List</h1>
-    <mat-form-field >
-        <mat-label >RSVP List Password</mat-label>
-        <input [(ngModel)]="entered" name="entered" matInput placeholder="Please enter the password.">
-    </mat-form-field>
+    <h1>Password</h1>
+    <button (click)="button1()" mat-raised-button color="primary" style="margin-right: 15px; margin-bottom: 15px;">*</button>
+    <button (click)="button2()" mat-raised-button color="primary" style="margin-right: 15px; margin-bottom: 15px;">*</button>
+    <button (click)="button3()" mat-raised-button color="primary" style="margin-right: 15px; margin-bottom: 15px;">*</button>
+    <button (click)="button4()" mat-raised-button color="primary" style="margin-right: 15px; margin-bottom: 15px;">*</button>
 </div>
-<div class="row" *ngIf="(entered | lowercase) === 'oscarthepug'">
+<div class="row" >
+    <button (click)="buttonReset()" mat-raised-button style="margin-right: 15px; margin-bottom: 15px;">Reset</button>
+</div>
+<div class="row" *ngIf="this.entered === '1214'">
+    <h1>Guest List</h1>
     <div>
         <mat-table mat-table [dataSource]="rsvps | async" class="mat-elevation-z8">
 
