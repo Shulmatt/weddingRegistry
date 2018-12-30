@@ -30,7 +30,17 @@ export class RsvpComponent implements OnInit {
         this.model = this.rsvpService.getNewRsvpModel();
     }
 
+    checkRsvp() {
+        if (this.model.Rsvp == true) {
+            this.model.Rsvp = false;
+        }
+    }
 
+    checkRsvpGuest() {
+        if (this.hasGuest == true) {
+            this.hasGuest = false;
+        }
+    }
     onSubmit() {
         this.rsvp = this.db.doc<any>('rsvps/' + this.model.FirstName + this.model.LastName);
 

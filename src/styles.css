@@ -12,14 +12,10 @@ footer {
 }
 .container {
     width: 100%;
-    display: flex;
     flex-direction: column;
 }
 .body {
     margin-bottom: 60px;
-}
-.mat-form-field {
-    max-width: 1000px;
 }
 .mat-radio-group {
     display: inline-flex;
