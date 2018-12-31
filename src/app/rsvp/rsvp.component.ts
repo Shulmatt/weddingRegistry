@@ -19,6 +19,7 @@ export class RsvpComponent implements OnInit {
     db: AngularFirestore;
     displayedColumns: string[] = ['FirstName', 'LastName', 'Rsvp', 'Dinner'];
     model: RsvpModel;
+    rsvpList: any[];
 
     constructor(private rsvpService: RsvpService, db: AngularFirestore, public snackBar: MatSnackBar) {
         this.db = db;
@@ -27,16 +28,17 @@ export class RsvpComponent implements OnInit {
 
     ngOnInit() {
         this.model = this.rsvpService.getNewRsvpModel();
+        this.rsvpList = new Array();
     }
 
     checkRsvp() {
-        if (this.model.Rsvp == true) {
+        if (this.model.Rsvp) {
             this.model.Rsvp = false;
         }
     }
 
     checkRsvpGuest() {
-        if (this.model.HasGuest == true) {
+        if (this.model.HasGuest) {
             this.model.HasGuest = false;
         }
     }
@@ -65,6 +67,9 @@ export class RsvpComponent implements OnInit {
         } else {
             this.snackBar.open("Submitted, sorry that you cannot make it.", '', { duration: 5000 });
         }
+
+        // display submission
+        this.rsvpList.push(this.model);
 
         // Clear form
         this.model = this.rsvpService.getNewRsvpModel();

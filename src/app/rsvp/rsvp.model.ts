@@ -1,4 +1,3 @@
-
 export class RsvpModel {
     constructor(
         public FirstName: string,

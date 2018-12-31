@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list';
 
 // Components
 import { AppComponent } from './app.component';
@@ -60,6 +61,7 @@ import { HotelComponent } from './hotel/hotel.component';
       MatSlideToggleModule,
       MatButtonModule,
       MatSnackBarModule,
+      MatListModule,
       ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
     providers: [

@@ -2,6 +2,23 @@
     <div class="">
         <h1>RSVP</h1>
         <form class="container" (ngSubmit)="onSubmit()">
+            <ul *ngFor="let rsvp of rsvpList" role="list">
+                <p>
+                    <strong>Name: &nbsp;</strong> {{ rsvp.FirstName }} {{ rsvp.LastName }}
+                </p>
+                <p>
+                    <strong>&nbsp;&nbsp; RSVP: &nbsp;</strong> {{ rsvp.Rsvp ? 'Yes' : 'No' }}
+                </p>
+                <p>
+                    <strong>&nbsp;&nbsp; Dinner: &nbsp;</strong> {{ rsvp.Dinner }}
+                </p>
+                <p>
+                    <strong>&nbsp;&nbsp; Allergies: &nbsp;</strong> {{ rsvp.Allergies }}
+                </p>
+                <p>
+                    <strong>&nbsp;&nbsp; Guest Of: &nbsp;</strong> {{ rsvp.GuestOf }}
+                </p>
+            </ul>
             <mat-form-field >
                 <mat-label >First Name</mat-label>
                 <input [(ngModel)]="model.FirstName" name="FirstName" matInput placeholder="First">
@@ -14,11 +31,11 @@
 
             <div style="display: inline-block;" >
                 <mat-checkbox class="example-margin" (click)="checkRsvpGuest()" [(ngModel)]="model.Rsvp" name="Rsvp" >RSVP or&nbsp;&nbsp; </mat-checkbox>
-                <mat-checkbox class="example-margin" (click)="checkRsvp()" [(ngModel)]="this.hasGuest" name="HasGuest" >RSVP For Guest</mat-checkbox>
+                <mat-checkbox class="example-margin" (click)="checkRsvp()" [(ngModel)]="model.HasGuest" name="HasGuest" >RSVP For Guest</mat-checkbox>
             </div>
 
             <div class="container" >
-                <div *ngIf="this.hasGuest == true" >
+                <div *ngIf="model.HasGuest" >
                     <div>
                         <mat-form-field>
                             <mat-label>Who is this the guest of?</mat-label>
@@ -27,7 +44,7 @@
                     </div>
                 </div>
 
-                <div *ngIf="model.Rsvp == true || this.hasGuest == true">
+                <div *ngIf="model.Rsvp || model.HasGuest">
                     <div >
                         <div class="radio-selected-value" >Dinner Option: {{ model.Dinner }}</div>
                         <mat-radio-group [(ngModel)]="model.Dinner" name="Dinner" >
