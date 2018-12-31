@@ -7,7 +7,7 @@ export class RsvpService {
   constructor() { }
 
     getDinnerOptions(): string[] {
-        return ["Chicken", "Beef", "Veggie"];
+        return ["Chicken", "Beef", "Veggie","Kids"];
     }
 
     getNewRsvpModel(): RsvpModel {
@@ -19,7 +19,8 @@ export class RsvpService {
             'Chicken',
             this.getDinnerOptions(),
             '',
-            ''
+            '',
+            false
         );
     }
 }
