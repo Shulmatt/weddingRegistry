@@ -33,6 +33,7 @@ import { GridComponent } from './grid/grid.component';
 import { RegistryComponent } from './registry/registry.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HotelComponent } from './hotel/hotel.component';
+import { CsvModule } from '@ctrl/ngx-csv';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { HotelComponent } from './hotel/hotel.component';
       MatButtonModule,
       MatSnackBarModule,
       MatListModule,
+      CsvModule,
       ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
     providers: [

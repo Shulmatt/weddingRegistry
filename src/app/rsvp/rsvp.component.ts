@@ -32,16 +32,26 @@ export class RsvpComponent implements OnInit {
     }
 
     checkRsvp() {
-        if (this.model.Rsvp) {
-            this.model.Rsvp = false;
+        if (this.model.HasGuest || this.model.CannotAttend) {
+            this.model.HasGuest = false;
+            this.model.CannotAttend = false;
         }
     }
 
     checkRsvpGuest() {
-        if (this.model.HasGuest) {
+        if (this.model.Rsvp || this.model.CannotAttend) {
+            this.model.Rsvp = false;
+            this.model.CannotAttend = false;
+        }
+    }
+
+    checkCannotAttend() {
+        if (this.model.Rsvp || this.model.HasGuest) {
+            this.model.Rsvp = false;
             this.model.HasGuest = false;
         }
     }
+
     onSubmit() {
         this.rsvp = this.db.doc<any>('rsvps/' + this.model.FirstName + this.model.LastName);
 
@@ -59,7 +69,8 @@ export class RsvpComponent implements OnInit {
             Rsvp: rsvpChoice,
             Dinner: this.model.Dinner,
             Allergies: this.model.Allergies,
-            GuestOf: this.model.GuestOf
+            GuestOf: this.model.GuestOf,
+            Date: new Date().toDateString()
         });
 
         if (this.model.Rsvp || this.model.HasGuest) {
